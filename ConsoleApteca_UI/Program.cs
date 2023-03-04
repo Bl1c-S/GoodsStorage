@@ -1,6 +1,5 @@
-﻿using BusinessLogic_Apteca.Models;
-using BusinessLogic_Apteca.Services;
-using BusinessLogic_Apteca.Settings;
+﻿using BusinessLogic_GS.Models;
+using BusinessLogic_GS.Settings;
 using ConsoleApteca_UI;
 using ConsoleApteca_UI.Viwes;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,8 +15,6 @@ public class Program
           IHost host = Host.CreateDefaultBuilder().ConfigureServices(servises =>
           {
                servises.AddSingleton<Settings>();
-               servises.AddSingleton<FileManager<ApGoodsType>>();
-               servises.AddSingleton<FileManager<ApGoods>>();
 
                servises.AddScoped<RealizationView>();
                servises.AddScoped<StorageView>();

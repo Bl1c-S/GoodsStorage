@@ -1,6 +1,5 @@
-﻿using BusinessLogic_Apteca.Models;
-using BusinessLogic_Apteca.Services;
-using BusinessLogic_Apteca.Settings;
+﻿using BusinessLogic_GS.Models;
+using BusinessLogic_GS.Settings;
 using ConsoleApteca_UI.Navigation;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -9,12 +8,10 @@ namespace ConsoleApteca_UI.Viwes;
 public class StorageView
 {
      private readonly Settings _settings;
-     private readonly FileManager<ApGoodsType> _fileManager;
 
-     public StorageView(Settings settings, FileManager<ApGoodsType> fileManager)
+     public StorageView(Settings settings)
      {
           _settings = settings;
-          _fileManager = fileManager;
      }
 
      public void Strategy(char keyChar)
@@ -41,7 +38,7 @@ public class StorageView
                Console.WriteLine(" - Введіть назву товару:");
                string name = Console.ReadLine()!;
 
-               ApGoodsType goodsType = new(name, _settings.GoodsTypeDirectoriFilePath);
+               GS_GoodsType goodsType = new(name);
 
                while (true)
                {
@@ -57,9 +54,6 @@ public class StorageView
                          Console.Clear();
                          Console.WriteLine("Створення нового виду товару...");
                          string filePathGoodsTypeDirectory = Path.Combine(_settings.GoodsStorageDirectoriFilePath, name);
-
-                         Directory.CreateDirectory(filePathGoodsTypeDirectory);
-                         _fileManager.Create(goodsType);
 
                          Console.Clear();
                          Console.WriteLine($"Створено новий вид товару: {name}");

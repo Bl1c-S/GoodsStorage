@@ -1,4 +1,4 @@
-﻿using BusinessLogic_Apteca.Settings;
+﻿using BusinessLogic_GS.Settings;
 using ConsoleApteca_UI.Navigation;
 using System;
 using System.Collections.Generic;

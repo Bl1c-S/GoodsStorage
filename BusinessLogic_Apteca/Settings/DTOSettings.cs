@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogic_Apteca.Settings;
+namespace BusinessLogic_GS.Settings;
 
 public class DTOSettings
 {

@@ -1,4 +1,4 @@
-﻿using BusinessLogic_Apteca.Settings;
+﻿using BusinessLogic_GS.Settings;
 
 namespace ConsoleApteca_UI.Viwes;
 

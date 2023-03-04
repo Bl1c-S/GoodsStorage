@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogic_Apteca.Models;
+namespace BusinessLogic_GS.Models;
 
-public class ModelBase
+public class GS_GoodsBase
 {
-    public string FilePath = string.Empty;
-    public string Expansion = string.Empty;
     public Guid Id;
-    public ModelBase()
+    public GS_GoodsBase()
     {
         Id = Guid.NewGuid();
     }
