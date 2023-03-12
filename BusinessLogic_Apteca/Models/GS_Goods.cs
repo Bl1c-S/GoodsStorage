@@ -8,7 +8,6 @@ namespace BusinessLogic_GS.Models;
 
 public class GS_Goods : GS_GoodsBase
 {
-     public readonly DateTime DateAddedToWarehouse;
      private List <string> _seryalNumbers;
      public int Count => _seryalNumbers.Count;
      public GS_GoodsType GoodsType { get; private set; }
@@ -17,7 +16,6 @@ public class GS_Goods : GS_GoodsBase
      {
           _seryalNumbers= new List<string>();
           GoodsType = goodsType;
-          DateAddedToWarehouse = DateTime.Now;
      }
      public bool AddSN(string sn) 
      {

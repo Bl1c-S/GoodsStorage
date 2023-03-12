@@ -13,6 +13,7 @@ public class MainView : IView
      private readonly RealizationView _realizationView;
      private readonly StorageView _storageView;
      private readonly SettingsView _settingsView;
+     private readonly ReceivingView _receivingView;
 
      public MainView(RealizationView realization, StorageView storage)
      {
@@ -31,6 +32,9 @@ public class MainView : IView
                     Storage();
                     break;
                case '3':
+                    Receiving();
+                    break;
+               case '4':
                     Settings();
                     break;
                default:
@@ -46,9 +50,10 @@ public class MainView : IView
                Console.ForegroundColor= ConsoleColor.Cyan;
                Console.WriteLine(" -- Меню --\n");
                Console.ForegroundColor = ConsoleColor.White;
-               Console.WriteLine(" 1 ) Продати товар");
-               Console.WriteLine(" 2 ) Склад");
-               Console.WriteLine(" 3 ) Налаштування");
+               Console.WriteLine(" 1 ) -- Реалізація : Продати товар --");
+               Console.WriteLine(" 2 ) -- Склад : Керування складом --");
+               Console.WriteLine(" 3 ) -- Прихідні накладні : Прихід товару --");
+               Console.WriteLine(" 4 ) -- Налаштування --");
                Console.ForegroundColor = ConsoleColor.Red;
                Console.WriteLine("\n E ) Вихід");
                Console.ForegroundColor = ConsoleColor.White;
@@ -61,6 +66,28 @@ public class MainView : IView
                Strategy(keyChar);
           }
      }
+
+     private void Receiving()
+     {
+          Console.Clear();
+          Console.ForegroundColor = ConsoleColor.DarkRed;
+          Console.WriteLine(" -- Прихідні накладні : Прихід товару --\n");
+          Console.ForegroundColor = ConsoleColor.White;
+          Console.WriteLine(" 1 ) Додати товар з штрих-кодом");
+          Console.WriteLine(" 2 ) Додати товар в кількості");
+          Console.WriteLine(" 3 ) Створити новий вид товару");
+          Console.ForegroundColor = ConsoleColor.Red;
+          Console.WriteLine("\n N ) Відміна");
+          Console.ForegroundColor = ConsoleColor.White;
+
+          char keyChar = Console.ReadKey().KeyChar;
+
+          if (ControlKeyBoard.GetBack(keyChar))
+               return;
+
+          _storageView.Strategy(keyChar);
+     }
+
      private void Storage()
      {
           while (true)
@@ -85,6 +112,7 @@ public class MainView : IView
                _storageView.Strategy(keyChar);
           }
      }
+
      private void Realization()
      {
           while (true)
