@@ -1,5 +1,7 @@
 ﻿using BusinessLogic_GS.Models;
 using BusinessLogic_GS.Settings;
+using Console_GS_UI.Viwes.RealizationView;
+using Console_GS_UI.Viwes.StorageView;
 using ConsoleApteca_UI;
 using ConsoleApteca_UI.Viwes;
 using Microsoft.Extensions.DependencyInjection;
