@@ -1,15 +1,17 @@
 ﻿using BusinessLogic_GS.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogic_GS.DTOs;
 
 public class DTO_GS_Goods
 {
-     private List<string> _seryalNumbers;
-     public int Count;
+     public List<string> _seryalNumbers;
      public GS_GoodsType GoodsType;
+     public int Count;
+
+     public DTO_GS_Goods(List<string> seryalNumbers, GS_GoodsType goodsType)
+     {
+          _seryalNumbers = seryalNumbers;
+          Count = seryalNumbers.Count;
+          GoodsType = goodsType;
+     }
 }

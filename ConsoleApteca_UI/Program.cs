@@ -1,9 +1,10 @@
-﻿using BusinessLogic_GS.Models;
-using BusinessLogic_GS.Settings;
-using Console_GS_UI.Viwes.RealizationView;
-using Console_GS_UI.Viwes.StorageView;
+﻿using BusinessLogic_GS.Settings;
+using Console_GS_UI.Viwes.MainViews;
+using Console_GS_UI.Viwes.MainViews.RealizationViews;
+using Console_GS_UI.Viwes.MainViews.ReceivingViews;
+using Console_GS_UI.Viwes.MainViews.SettingsViews;
+using Console_GS_UI.Viwes.MainViews.StorageViews;
 using ConsoleApteca_UI;
-using ConsoleApteca_UI.Viwes;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Text;
@@ -17,7 +18,8 @@ public class Program
           IHost host = Host.CreateDefaultBuilder().ConfigureServices(servises =>
           {
                servises.AddSingleton<Settings>();
-
+               servises.AddSingleton<SettingsView>();
+               servises.AddSingleton<ReceivingView>();
                servises.AddScoped<RealizationView>();
                servises.AddScoped<StorageView>();
 

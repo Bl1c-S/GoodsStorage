@@ -12,12 +12,41 @@ public class StorageView : ViewBase
     {
         _settings = settings;
     }
+     public void Main()
+     {
+          while (true)
+          {
+               Console.Clear();
+               Console.ForegroundColor = ConsoleColor.DarkYellow;
+               Console.WriteLine(" -- Склад : Керування складом --\n");
+               Console.ForegroundColor = ConsoleColor.White;
+               Console.WriteLine(" 1 ) Створити прихідну накладну");
+               Console.WriteLine(" 2 ) Списати товар зі складу");
+               Console.WriteLine(" 3 ) Переглянути весь склад");
+               Console.WriteLine(" 4 ) Створити новий вид товару");
+               Console.ForegroundColor = ConsoleColor.Red;
+               Console.WriteLine("\n N ) Відміна");
+               Console.ForegroundColor = ConsoleColor.White;
 
-    public override void Strategy(char keyChar)
+               char keyChar = Console.ReadKey().KeyChar;
+
+               if (GetBack(keyChar))
+                    return;
+
+               Strategy(keyChar);
+          }
+     }
+     protected override void Strategy(char keyChar)
     {
         switch (keyChar)
         {
-            case '4':
+               case '1':
+                    break;
+               case '2':
+                    break;
+               case '3':
+                    break;
+               case '4':
                 CreateNewGoodsType();
                 break;
             default:

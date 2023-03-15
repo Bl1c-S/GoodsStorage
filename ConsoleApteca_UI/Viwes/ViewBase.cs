@@ -9,7 +9,7 @@ namespace Console_GS_UI.Viwes;
 
 public abstract class ViewBase : IView
 {
-     public abstract void Strategy(char keyChar);
+     protected abstract void Strategy(char keyChar);
 
      protected void Default(char keyChar)
      {
