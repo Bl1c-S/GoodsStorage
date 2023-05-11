@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogic_GoodsStorage", "BusinessLogic_Apteca\BusinessLogic_GoodsStorage.csproj", "{E6020D00-A4F9-4623-AAC0-5DF384F36920}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console_GS_UI", "ConsoleApteca_UI\Console_GS_UI.csproj", "{BA07EC12-67CF-4438-8B63-15EFA6DFF220}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{003ABD71-D9BC-4792-9C21-7C37C7B54BE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{E6020D00-A4F9-4623-AAC0-5DF384F36920}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6020D00-A4F9-4623-AAC0-5DF384F36920}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6020D00-A4F9-4623-AAC0-5DF384F36920}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BA07EC12-67CF-4438-8B63-15EFA6DFF220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA07EC12-67CF-4438-8B63-15EFA6DFF220}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA07EC12-67CF-4438-8B63-15EFA6DFF220}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA07EC12-67CF-4438-8B63-15EFA6DFF220}.Release|Any CPU.Build.0 = Release|Any CPU
+		{003ABD71-D9BC-4792-9C21-7C37C7B54BE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{003ABD71-D9BC-4792-9C21-7C37C7B54BE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{003ABD71-D9BC-4792-9C21-7C37C7B54BE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{003ABD71-D9BC-4792-9C21-7C37C7B54BE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

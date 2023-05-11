@@ -17,27 +17,27 @@ public class ReceivingView : ViewBase
                Console.WriteLine("\n N ) Відміна");
                Console.ForegroundColor = ConsoleColor.White;
 
-               char keyChar = Console.ReadKey().KeyChar;
+               ConsoleKey key = Console.ReadKey().Key;
 
-               if (GetBack(keyChar))
+               if (GetBack(key))
                     return;
 
-               Strategy(keyChar);
+               //Strategy(key);
           }
      }
-     protected override void Strategy(char keyChar)
+     protected override void Strategy(ConsoleKey key)
      {
-          switch (keyChar)
+          switch (key)
           {
-               case '1':
+               case ConsoleKey.D1:
 
                     break;
-               case '2':
+               case ConsoleKey.D2:
                     break;
-               case '3':
+               case ConsoleKey.D3:
                     break;
                default:
-                    Default(keyChar);
+                    Default(key);
                     break;
           }
      }
@@ -63,7 +63,7 @@ public class ReceivingView : ViewBase
                          break;
                     }
                     else
-                         Console.WriteLine($"Помилка: Штрих-код менше 6 або більше 24 символів" +
+                         Console.WriteLine($" Помилка: Штрих-код менше 6 або більше 24 символів" +
                               $"\n або присутні пробели");
                }
                Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -71,11 +71,11 @@ public class ReceivingView : ViewBase
                Console.ForegroundColor = ConsoleColor.Red;
                Console.WriteLine("N) Відміна");
                Console.ForegroundColor = ConsoleColor.White;
-               char keyChar = Console.ReadKey().KeyChar;
+               ConsoleKey key = Console.ReadKey().Key;
 
-               if (Confirmation(keyChar))
+               if (Confirmation(key))
                     break;
-               if (GetBack(keyChar))
+               if (GetBack(key))
                     return;
           }
      }

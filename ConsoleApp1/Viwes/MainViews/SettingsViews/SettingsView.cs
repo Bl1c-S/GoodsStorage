@@ -1,7 +1,4 @@
 ﻿using BusinessLogic_GS.Settings;
-using Console_GS_UI.Viwes.MainViews.RealizationViews;
-using Console_GS_UI.Viwes.MainViews.ReceivingViews;
-using Console_GS_UI.Viwes.MainViews.StorageViews;
 
 namespace Console_GS_UI.Viwes.MainViews.SettingsViews;
 
@@ -30,24 +27,24 @@ public class SettingsView : ViewBase
                Console.WriteLine("\n N ) Відміна");
                Console.ForegroundColor = ConsoleColor.White;
 
-               char keyChar = Console.ReadKey().KeyChar;
+               ConsoleKey key = Console.ReadKey().Key;
 
-               if (GetBack(keyChar))
+               if (GetBack(key))
                     return;
           }
      }
-     protected override void Strategy(char keyChar)
+     protected override void Strategy(ConsoleKey key)
      {
-          switch (keyChar)
+          switch (key)
           {
                default:
-                    Default(keyChar);
+                    Default(key);
                     break;
           }
      }
      public void ShowSettings()
     {
-        Console.WriteLine("", _settings.FilePathSettings);
+        Console.WriteLine($"Шлях до файлу налаштуваннь: {_settings.FilePathSettings}");
         Console.WriteLine("", _settings.GoodsStorageDirectoriFilePath);
         Console.WriteLine("", _settings.GoodsTypeDirectoriFilePath);
 

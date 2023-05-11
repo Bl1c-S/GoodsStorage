@@ -23,27 +23,6 @@ public class MainView : ViewBase
           _settingsView = settingsView;
      }
 
-     protected override void Strategy(char keyChar)
-     {
-          switch (keyChar)
-          {
-               case '1':
-                    _realizationView.Main();
-                    break;
-               case '2':
-                    _storageView.Main();
-                    break;
-               case '3':
-                    _receivingView.Main();
-                    break;
-               case '4':
-                    _settingsView.Main();
-                    break;
-               default:
-                    Default(keyChar);
-                    break;
-          }
-     }
      public void Main()
      {
           while (true)
@@ -60,12 +39,33 @@ public class MainView : ViewBase
                Console.WriteLine("\n E ) Вихід");
                Console.ForegroundColor = ConsoleColor.White;
 
-               char keyChar = Console.ReadKey().KeyChar;
+               ConsoleKey key = Console.ReadKey().Key;
 
-               if (keyChar == 'e' || keyChar == 'E')
+               if (key == ConsoleKey.E)
                     break;
 
-               Strategy(keyChar);
+               Strategy(key);
+          }
+     }
+     protected override void Strategy(ConsoleKey key)
+     {
+          switch (key)
+          {
+               case ConsoleKey.D1:
+                    _realizationView.Main();
+                    break;
+               case ConsoleKey.D2:
+                    _storageView.Main();
+                    break;
+               case ConsoleKey.D3:
+                    _receivingView.Main();
+                    break;
+               case ConsoleKey.D4:
+                    _settingsView.Main();
+                    break;
+               default:
+                    Default(key);
+                    break;
           }
      }
 }
