@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BusinessLogic_GS.Models;
+﻿namespace BusinessLogic_GS.Models;
 
 public class GS_GoodsBase
 {
-    public Guid Id;
-    public GS_GoodsBase()
-    {
-        Id = Guid.NewGuid();
-    }
+     public Guid Id { get; private set; }
+     protected string BaseName;
+     public GS_GoodsBase()
+     {
+          Id = Guid.NewGuid();
+          BaseName = string.Empty;
+     }
 }

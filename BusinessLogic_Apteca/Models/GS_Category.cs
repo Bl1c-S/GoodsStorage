@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic_GS.Models;
 
-public class GS_GoodsType : GS_GoodsBase
+public class GS_Category : GS_GoodsBase
 {
-     public string Title { get; private set; }
+     public string Name => BaseName;
 
-     public GS_GoodsType(string title)
+     public GS_Category(string name)
      {
-          Title = title;
+          BaseName = name;
      }
 }

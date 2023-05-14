@@ -1,15 +1,27 @@
 ﻿using BusinessLogic_GS.DbContexts;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace BusinessLogic_GoodsStorage.DbContexts;
-
-public class GS_DbContextFactory : IDesignTimeDbContextFactory<GS_DbContext>
+namespace BusinessLogic_GoodsStorage.DbContexts
 {
-     public GS_DbContext CreateDbContext(string[] args)
+     public class GS_DbContextFactory
      {
-          DbContextOptions options = new DbContextOptionsBuilder().UseSqlite("Data Sourse=GoodsStorage.db").Options;
+          private readonly string _connectionString;
 
-          return new GS_DbContext(options);
+          public GS_DbContextFactory(string connectionString)
+          {
+               _connectionString = connectionString;
+          }
+
+          public GS_DbContext CreateDbContext(string[] args)
+          {
+               DbContextOptions options = new DbContextOptionsBuilder().UseSqlite("Data Sourse=GoodsStorage.db").Options;
+
+               return new GS_DbContext(options);
+          }
      }
 }

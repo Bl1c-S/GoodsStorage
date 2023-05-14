@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BusinessLogic_GS.Models;
+﻿namespace BusinessLogic_GS.Models;
 
 public class GS_Goods : GS_GoodsBase
 {
      private List <string> _seryalNumbers;
      public int Count => _seryalNumbers.Count;
-     public GS_GoodsType GoodsType { get; private set; }
+     public string Name => BaseName;
+     public GS_Category Category { get; private set; }
 
-     public GS_Goods(GS_GoodsType goodsType)
+     public GS_Goods(GS_Category category, string name)
      {
           _seryalNumbers= new List<string>();
-          GoodsType = goodsType;
+          Category = category;
+          BaseName = name;
      }
-     public bool AddSN(string sn) 
+     public bool AddSN(string sn)
      {
           if (_seryalNumbers.Contains(sn))
                return false;
-          if (sn.Length < 6 || sn.Length > 32)
+          if (sn.Length < 4 || sn.Length > 32)
                return false;
 
           _seryalNumbers.Add(sn);
