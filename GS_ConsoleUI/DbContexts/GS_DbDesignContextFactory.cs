@@ -1,5 +1,4 @@
-﻿using Console_UI.DbContexts;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
 namespace Console_UI.DbContexts;

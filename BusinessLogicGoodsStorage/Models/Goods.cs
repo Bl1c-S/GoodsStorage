@@ -2,7 +2,7 @@
 
 public class Goods : GoodsBase
 {
-     public List <string> _seryalNumbers { get; private set; }
+     private List<string> _seryalNumbers;
      public string Name => BaseName;
      public Category Category { get; private set; }
 
@@ -16,7 +16,7 @@ public class Goods : GoodsBase
      {
           if (_seryalNumbers.Contains(sn))
                return false;
-          if (sn.Length < 4 || sn.Length > 32)
+          if (sn.Length < MinSnLength || sn.Length > MaxSnLength)
                return false;
 
           _seryalNumbers.Add(sn);

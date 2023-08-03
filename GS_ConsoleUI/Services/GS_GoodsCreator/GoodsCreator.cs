@@ -27,7 +27,7 @@ public class GoodsCreator : IGoodsCreator
      {
           return new GoodsDTO()
           {
-               SeryalNumbers = goods._seryalNumbers,
+               //SeryalNumbers = goods._seryalNumbers,
                CategoryId = goods.Category.Id,
                Id = goods.Id,
                Name = goods.Name,

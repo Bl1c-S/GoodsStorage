@@ -12,13 +12,13 @@ using System.Text;
 
 public class Program
 {
-     private const string CONECTION_STRING = "Data Sourse=GoodsStorage.db";
+     private const string CONECTION_STRING = "Data Source=GoodsStorage.db";
      public static void Main(string[] args)
      {
           Console.OutputEncoding = Encoding.UTF8;
 
           DbContextOptions options = new DbContextOptionsBuilder().UseSqlite(CONECTION_STRING).Options;
-          using (GS_DbContext dbContext = new GS_DbContext(options) )
+          using (GS_DbContext dbContext = new GS_DbContext(options))
           {
                dbContext.Database.Migrate();
           }

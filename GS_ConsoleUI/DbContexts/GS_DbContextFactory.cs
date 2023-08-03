@@ -1,21 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Console_UI.DbContexts
+namespace Console_UI.DbContexts;
+
+public class GS_DbContextFactory
 {
-     public class GS_DbContextFactory
+     private readonly string _connectionString;
+
+     public GS_DbContextFactory(string connectionString)
      {
-          private readonly string _connectionString;
+          _connectionString = connectionString;
+     }
 
-          public GS_DbContextFactory(string connectionString)
-          {
-               _connectionString = connectionString;
-          }
+     public GS_DbContext CreateDbContext()
+     {
+          DbContextOptions options = new DbContextOptionsBuilder().UseSqlite(_connectionString).Options;
 
-          public GS_DbContext CreateDbContext()
-          {
-               DbContextOptions options = new DbContextOptionsBuilder().UseSqlite("Data Sourse=GoodsStorage.db").Options;
-
-               return new GS_DbContext(options);
-          }
+          return new GS_DbContext(options);
      }
 }

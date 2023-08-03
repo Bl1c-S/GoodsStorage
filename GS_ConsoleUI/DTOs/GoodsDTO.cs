@@ -1,15 +1,14 @@
-﻿using SQLiteNetExtensions.Attributes;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BusinessLogic_GS.DTOs;
 
 public class GoodsDTO
 {
+     [Key]
      public Guid Id { get; set; }
      public Guid CategoryId { get; set; }
      public string Name { get; set; }
-
-     [TextBlob("SeryalNumbersBlobbed")]
-     public List<string> SeryalNumbers { get; set; }
+     public string SeryalNumbers { get; set; }
 
 
      //public DTO_GS_Goods(List<string> seryalNumbers, GS_GoodsType goodsType)
